@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 200px;
+}
+ul {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  list-style-type: none;
+}
+ul li {
+  position: absolute;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition: 1s all;
+}
+ul li img {
+  width: 100px;
+  height: 100px;
+}
+ul li:nth-child(1) {
+  background-color: #006600;
+}
+ul li:nth-child(2) {
+  background-color: #0066CC;
+}
+ul li:nth-child(3) {
+  background-color: #00FF99;
+}
+ul li:nth-child(4) {
+  background-color: #990033;
+}
+ul li:nth-child(5) {
+  background-color: #999966;
+}
+ul li:nth-child(6) {
+  background-color: #FF3366;
+}
+ul li.one {
+  z-index: 6;
+  left: 0;
+  transform: translateX(0) perspective(300px) rotateY(0);
+}
+ul li.two {
+  z-index: 5;
+  left: 0;
+  transform: translateX(-150px) perspective(300px) rotateY(-40deg);
+}
+ul li.three {
+  z-index: 4;
+  left: 0;
+  transform: translateX(-85px) perspective(300px) rotateY(45deg);
+}
+ul li.four {
+  z-index: 3;
+  left: 0;
+  transform: translateX(0) perspective(300px) rotateY(0);
+}
+ul li.five {
+  z-index: 4;
+  left: 0;
+  transform: translateX(85px) perspective(300px) rotateY(-45deg);
+}
+ul li.six {
+  z-index: 5;
+  left: 0;
+  transform: translateX(150px) perspective(300px) rotateY(40deg);
+}

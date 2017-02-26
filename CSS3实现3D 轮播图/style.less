@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 200px;
+}
+
+ul {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  list-style-type: none;
+
+  li {
+    position: absolute;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: 1s all;
+    
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    
+    &:nth-child(1) { background-color: #006600; }
+    &:nth-child(2) { background-color: #0066CC; }
+    &:nth-child(3) { background-color: #00FF99; }
+    &:nth-child(4) { background-color: #990033; }
+    &:nth-child(5) { background-color: #999966; }
+    &:nth-child(6) { background-color: #FF3366; }
+    
+    &.one {
+      z-index: 6;
+      left: 0;
+      transform: translateX(0) perspective(300px) rotateY(0);
+    }
+    &.two {
+      z-index: 5;
+      left: 0;
+      transform: translateX(-150px) perspective(300px) rotateY(-40deg);
+    }
+    &.three {
+      z-index: 4;
+      left: 0;
+      transform: translateX(-85px) perspective(300px) rotateY(45deg);
+    }
+    &.four {
+      z-index: 3;
+      left: 0;
+      transform: translateX(0) perspective(300px) rotateY(0);
+    }
+    &.five {
+      z-index: 4;
+      left: 0;
+      transform: translateX(85px) perspective(300px) rotateY(-45deg);
+    }
+    &.six {
+      z-index: 5;
+      left: 0;
+      transform: translateX(150px) perspective(300px) rotateY(40deg);
+    }
+  }
+}Ï
