@@ -1,24 +1,37 @@
 class Observer {
   constructor(json) {
-    const data = {}
+    this.data = {}
+    
+    this.each(json)
+    
+    return {
+      data: this.data
+    }
+  }
 
-    Object.keys(json).forEach(key => {
-      Object.defineProperty(data, key, {
-        configurable: true,
-        enumerable: true,
-        writeable: true,
-        get: function () {
-          console.log(`你访问了 ${key}`)
-        },
-        set: newValue => [
-          console.log(`你设置了 ${key}，新的值为${newValue}`)
-        ]
-      })
-
-      data[key] = json[key]
+  each(obj) {
+    Object.keys(obj).forEach(key => {
+      if (Object.prototype.toString.call(obj[key]) === '[object Object]') {
+        this.each(obj[key])
+      } else {
+        this.convert(key, obj[key])
+      }
     })
+  }
 
-    return { data }
+  convert(key, value) {    
+    Object.defineProperty(this.data, key, {
+      configurable: true,
+      enumerable: true,
+      get: () => {
+        console.log(`你访问了 ${key}`)
+        
+        return value
+      },
+      set: newValue => {
+        console.log(`你设置了 ${key}，新的值为${newValue}`)
+      }
+    })
   }
 }
 
