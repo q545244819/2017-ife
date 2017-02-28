@@ -1,9 +1,9 @@
 class Observer {
   constructor(json) {
     this.data = {}
-    
+
     this.each(json)
-    
+
     return {
       data: this.data
     }
@@ -19,17 +19,21 @@ class Observer {
     })
   }
 
-  convert(key, value) {    
+  convert(key, value) {
+    let val = value
+
     Object.defineProperty(this.data, key, {
       configurable: true,
       enumerable: true,
-      get: () => {
+      get: function () {
         console.log(`你访问了 ${key}`)
-        
-        return value
+
+        return val
       },
-      set: newValue => {
+      set: function (newValue) {
         console.log(`你设置了 ${key}，新的值为${newValue}`)
+
+        val = newValue
       }
     })
   }
