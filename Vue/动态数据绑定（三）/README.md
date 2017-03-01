@@ -1,4 +1,4 @@
-# 百度前端学院学习：动态数据绑定（二）
+# 百度前端学院学习：动态数据绑定（三）
 
  > [题目地址](http://ife.baidu.com/course/detail/id/21)
  > [源代码地址](https://github.com/q545244819/2017-ife/tree/master/Vue/%E5%8A%A8%E6%80%81%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%EF%BC%88%E4%B8%89%EF%BC%89)
