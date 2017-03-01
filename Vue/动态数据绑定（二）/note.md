@@ -89,3 +89,21 @@ constructor(json) {
 ## 还没完成的功能
 
  - `$watch`函数不能够监听比较深的对象的属性。
+ - 新建一个示例的时候，如果传入一个深对象，会被打平：
+  ```JavaScript
+  let app = new Observer({
+    name: {
+      a: 1,
+      b: 2
+    }
+  })
+
+  console.log(app.data)
+  // 会输出
+  /*
+    [object Object] {
+      a: 1,
+      b: 2
+    }
+  */
+  ```
