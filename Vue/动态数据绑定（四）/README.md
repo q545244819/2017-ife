@@ -31,6 +31,7 @@
 constructor(json) {
   this.el = document.querySelector(json.el)
   ...
+  this.originalTemplate = this.el.innerHTML
   this.html = ''
 
   this.each(json.data)
@@ -109,7 +110,7 @@ convert() {
     set: function (newValue) {
       ....
       
-      this.templateMatch(this.el.innerHTML, this.data)
+      that.templateMatch(that.originalTemplate, that.data)
     }
   })
 }

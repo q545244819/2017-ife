@@ -4,6 +4,7 @@ class Observer {
     this.data = {}
     this.setData = null
     this.watchProperties = {}
+    this.originalTemplate = this.el.innerHTML
     this.html = ''
 
     this.each(json.data)
@@ -61,7 +62,7 @@ class Observer {
 
         val = newValue
         
-        this.templateMatch(this.el.innerHTML, this.data)
+        that.templateMatch(that.originalTemplate, that.data)
       }
     })
   }
